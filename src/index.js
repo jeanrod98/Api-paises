@@ -15,6 +15,7 @@ app.get("/api", (req, res) => {
         codigo: country.cca2
       }));
       console.log(paisesEnEspanol);
+        paisesEnEspanol.sort((a, b) => a.nombre.localeCompare(b.nombre));
       res.json(paisesEnEspanol)
     })
     .catch(error => console.error('Error:', error));
